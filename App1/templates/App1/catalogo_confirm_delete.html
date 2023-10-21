@@ -1,0 +1,14 @@
+{% extends 'App1/padre.html' %}
+{% load static %}
+{% block main %}
+<h1>Borrar del Catalogo</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+
+<p>Desea Borrar <i>{{object}}</i></p>
+
+    <input type="submit" value="Borrar">
+    <a href="{% url 'CatalogoList' %}">Regresar</a>
+
+</form>
+{% endblock %}

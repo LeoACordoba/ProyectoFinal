@@ -1,0 +1,20 @@
+{% extends 'App1/padre.html' %}
+
+{% load static %}
+
+{%block title%}
+<title>Catalogo Detalle</title>
+{%endblock title%}
+
+{% block main %}
+<p>Marca: <i>{{ catalogo.marca }}</i></p>
+    <p>Modelo: <i>{{ catalogo.modelo }}</i></p>
+    <p>Valor: <i>{{ catalogo.valor }}</i>
+    {%if catalogo.imagen %}
+        <p><img src="{{catalogo.imagen.url}}" alt="" style="height: 300px;width: 300px;">
+    {%endif%}
+
+    <a href="{% url 'CatalogoList' %}">Regresar</a>
+    </p>
+   
+{% endblock %}

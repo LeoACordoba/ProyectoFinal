@@ -1,0 +1,25 @@
+{% extends 'App1/padre.html' %}
+
+{% load static %}
+
+
+{% block main %}
+<h1>Proveedores</h1>
+<ul>
+    {% for proveedor in object_list %}
+
+        <li>
+            <p>Nombre: {{ proveedor.nombre}} </p>
+            <p> 
+                <a href="{% url 'ProveedorDetail' proveedor.id %}">Ver</a> | 
+                <a href="{% url 'ProveedorEdit' proveedor.id %}">Editar</a> | 
+                <a href="{% url 'ProveedorDelete' proveedor.id %}">Borrar</a> 
+            
+            </p> 
+        </li>
+
+    {% endfor %}
+</ul>
+
+<a href="{% url 'ProveedorNew'  %}">Nuevo</a> | 
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'App1/padre.html' %}
+
+{% load static %}
+
+
+{% block main %}
+<p>Nombre: <i>{{ proveedor.nombre }}</i></p>
+    <p>Direccion: <i>{{ proveedor.direccion }}</i></p>
+    <p>Email: <i>{{ proveedor.email }}</i>
+    <p>Telefono: <i>{{proveedor.telefono}}</i></p>
+        <a href="{% url 'ProveedorList' %}">Regresar</a>
+    </p>
+   
+{% endblock %}

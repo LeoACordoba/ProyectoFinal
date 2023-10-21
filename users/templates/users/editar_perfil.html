@@ -1,0 +1,25 @@
+{% extends "App1/padre.html" %}
+
+{% load static %}
+
+{% block main %}
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Editar Perfil</h1>
+    <h1>De {{usuario}}</h1>
+    
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <table>
+
+            {{ miFormulario.as_table }}
+
+        </table>
+
+        <input type="submit", value="Enviar">
+
+    </form>  
+
+{% endblock %}

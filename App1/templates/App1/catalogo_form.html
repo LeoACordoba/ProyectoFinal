@@ -1,0 +1,17 @@
+{% extends 'App1/padre.html' %}
+{% load static %}
+{% block main %}
+<h1>Agregar productos al Catalogo</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar">
+
+</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'App1/padre.html' %}
+
+{% load static %}
+
+{%block title%}
+<title>Catalogo Detalle</title>
+{%endblock title%}
+
+{% block main %}
+<h1>Catalogo</h1>
+<ul>
+    {% for catalogo in object_list %}
+
+        <li>
+            <p>Marca: {{ catalogo.marca}} - Modelo: {{catalogo.modelo}} </p>
+            <p> 
+                <a href="{% url 'CatalogoDetail' catalogo.id %}">Ver</a> | 
+                <a href="{% url 'CatalogoEdit' catalogo.id %}">Editar</a> | 
+                <a href="{% url 'CatalogoDelete' catalogo.id %}">Borrar</a> 
+            
+            </p> 
+        </li>
+
+    {% endfor %}
+</ul>
+
+<a href="{% url 'CatalogoNew'  %}">Nuevo</a> | 
+{% endblock %}
